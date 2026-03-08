@@ -27,6 +27,37 @@ namespace AddressLabel
             }
             base.Dispose(disposing);
         }
+        private void ValidateFields()
+        {
+          //  bool valid = true;
+          //  string message = "";
+            //if (CityTextBox.Text == "")
+            //{
+            //    message = "City is required.\n" + message;
+            //    CityTextBox.Focus();
+            //}
+            //if (PhoneTextBox.Text == "")
+            //{
+            //    message = "Phone number is required.\n" + message;
+            //    PhoneTextBox.Focus();
+            //}
+            //if (AgeTextBox.Text == "")
+            //{
+            //    message = "Please enter a valid age.\n" + message;
+            //    AgeTextBox.Focus();
+            //}
+            //if (NameTextBox.Text == "")
+            //{
+            //    message = "Name is required.\n" + message;
+            //    NameTextBox.Focus();
+            //}
+            //if (message != "")
+            //{
+            //    valid = false;
+            //    MessageBox.Show(message);
+            //}
+            // If all validations pass, you can proceed with form submission logic here.
+        }
 
         #region Windows Form Designer generated code
 
@@ -52,6 +83,7 @@ namespace AddressLabel
             DisplayLabelButton = new Button();
             ClearButton = new Button();
             ExitButton = new Button();
+            label1 = new Label();
             MailingAddressGroupBox.SuspendLayout();
             SuspendLayout();
             // 
@@ -63,7 +95,6 @@ namespace AddressLabel
             FirstNameLabel.Size = new Size(97, 25);
             FirstNameLabel.TabIndex = 0;
             FirstNameLabel.Text = "First Name";
-            FirstNameLabel.Click += FirstNameLabel_Click;
             // 
             // FirstNameTextBox
             // 
@@ -71,7 +102,6 @@ namespace AddressLabel
             FirstNameTextBox.Name = "FirstNameTextBox";
             FirstNameTextBox.Size = new Size(263, 31);
             FirstNameTextBox.TabIndex = 1;
-            FirstNameTextBox.TextChanged += FirstNameTextBox_TextChanged;
             // 
             // LastNameTextBox
             // 
@@ -88,7 +118,6 @@ namespace AddressLabel
             LastNameLabel.Size = new Size(95, 25);
             LastNameLabel.TabIndex = 3;
             LastNameLabel.Text = "Last Name";
-            LastNameLabel.Click += LastNameLabel_Click;
             // 
             // StreetAddressTextBox
             // 
@@ -96,6 +125,7 @@ namespace AddressLabel
             StreetAddressTextBox.Name = "StreetAddressTextBox";
             StreetAddressTextBox.Size = new Size(263, 31);
             StreetAddressTextBox.TabIndex = 3;
+            
             // 
             // StreetAddressLabel
             // 
@@ -174,6 +204,7 @@ namespace AddressLabel
             MailingAddressGroupBox.TabIndex = 12;
             MailingAddressGroupBox.TabStop = false;
             MailingAddressGroupBox.Text = "Mailing Address";
+           // ToolTip.SetToolTip(MailingAddressGroupBox, "Add User Info");
             // 
             // DisplayLabelButton
             // 
@@ -193,6 +224,7 @@ namespace AddressLabel
             ClearButton.TabIndex = 8;
             ClearButton.Text = "Clear";
             ClearButton.UseVisualStyleBackColor = true;
+            ClearButton.Click += ClearButton_Click_1;
             // 
             // ExitButton
             // 
@@ -202,21 +234,33 @@ namespace AddressLabel
             ExitButton.TabIndex = 9;
             ExitButton.Text = "Exit";
             ExitButton.UseVisualStyleBackColor = true;
+            ExitButton.Click += ExitButton_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(354, 30);
+            label1.Name = "label1";
+            label1.Size = new Size(59, 25);
+            label1.TabIndex = 13;
+            label1.Text = "label1";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label1);
             Controls.Add(ExitButton);
             Controls.Add(ClearButton);
             Controls.Add(DisplayLabelButton);
             Controls.Add(MailingAddressGroupBox);
             Name = "Form1";
-            Text = "Form1";
+            Text = "\"";
             MailingAddressGroupBox.ResumeLayout(false);
             MailingAddressGroupBox.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -237,5 +281,6 @@ namespace AddressLabel
         private Button DisplayLabelButton;
         private Button ClearButton;
         private Button ExitButton;
+        private Label label1;
     }
 }
