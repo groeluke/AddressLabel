@@ -29,33 +29,13 @@ namespace AddressLabel
         }
         private void ValidateFields()
         {
-          //  bool valid = true;
-          //  string message = "";
-            //if (CityTextBox.Text == "")
-            //{
-            //    message = "City is required.\n" + message;
-            //    CityTextBox.Focus();
-            //}
-            //if (PhoneTextBox.Text == "")
-            //{
-            //    message = "Phone number is required.\n" + message;
-            //    PhoneTextBox.Focus();
-            //}
-            //if (AgeTextBox.Text == "")
-            //{
-            //    message = "Please enter a valid age.\n" + message;
-            //    AgeTextBox.Focus();
-            //}
-            //if (NameTextBox.Text == "")
-            //{
-            //    message = "Name is required.\n" + message;
-            //    NameTextBox.Focus();
-            //}
-            //if (message != "")
-            //{
-            //    valid = false;
-            //    MessageBox.Show(message);
-            //}
+            bool valid = true;
+            string message = "";
+            if (message != "")
+            {
+                valid = false;
+                MessageBox.Show(message);
+            }
             // If all validations pass, you can proceed with form submission logic here.
         }
 
@@ -78,13 +58,15 @@ namespace AddressLabel
             StateLabel = new Label();
             StateTextBox = new TextBox();
             ZipCodeLabel = new Label();
-            textBox1 = new TextBox();
+            ZipCodeTextBox = new TextBox();
             MailingAddressGroupBox = new GroupBox();
             DisplayLabelButton = new Button();
             ClearButton = new Button();
             ExitButton = new Button();
-            label1 = new Label();
+            DisplayLabel = new Label();
+            AddressLabelGroupBox = new GroupBox();
             MailingAddressGroupBox.SuspendLayout();
+            AddressLabelGroupBox.SuspendLayout();
             SuspendLayout();
             // 
             // FirstNameLabel
@@ -102,6 +84,7 @@ namespace AddressLabel
             FirstNameTextBox.Name = "FirstNameTextBox";
             FirstNameTextBox.Size = new Size(263, 31);
             FirstNameTextBox.TabIndex = 1;
+            FirstNameTextBox.Tag = "FirstNameTextBox";
             // 
             // LastNameTextBox
             // 
@@ -109,6 +92,7 @@ namespace AddressLabel
             LastNameTextBox.Name = "LastNameTextBox";
             LastNameTextBox.Size = new Size(263, 31);
             LastNameTextBox.TabIndex = 2;
+            LastNameTextBox.Tag = "LastNameTextBox";
             // 
             // LastNameLabel
             // 
@@ -125,7 +109,7 @@ namespace AddressLabel
             StreetAddressTextBox.Name = "StreetAddressTextBox";
             StreetAddressTextBox.Size = new Size(263, 31);
             StreetAddressTextBox.TabIndex = 3;
-            
+            StreetAddressTextBox.Tag = "StreetAddressTextBox";
             // 
             // StreetAddressLabel
             // 
@@ -142,6 +126,7 @@ namespace AddressLabel
             CityTextBox.Name = "CityTextBox";
             CityTextBox.Size = new Size(263, 31);
             CityTextBox.TabIndex = 4;
+            CityTextBox.Tag = "CityTextBox";
             // 
             // CityLabel
             // 
@@ -167,6 +152,7 @@ namespace AddressLabel
             StateTextBox.Name = "StateTextBox";
             StateTextBox.Size = new Size(150, 31);
             StateTextBox.TabIndex = 5;
+            StateTextBox.Tag = "StateTextBox";
             // 
             // ZipCodeLabel
             // 
@@ -177,16 +163,17 @@ namespace AddressLabel
             ZipCodeLabel.TabIndex = 10;
             ZipCodeLabel.Text = "Zip Code";
             // 
-            // textBox1
+            // ZipCodeTextBox
             // 
-            textBox1.Location = new Point(15, 363);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(150, 31);
-            textBox1.TabIndex = 6;
+            ZipCodeTextBox.Location = new Point(15, 363);
+            ZipCodeTextBox.Name = "ZipCodeTextBox";
+            ZipCodeTextBox.Size = new Size(150, 31);
+            ZipCodeTextBox.TabIndex = 6;
+            ZipCodeTextBox.Tag = "ZipCodeTextBox";
             // 
             // MailingAddressGroupBox
             // 
-            MailingAddressGroupBox.Controls.Add(textBox1);
+            MailingAddressGroupBox.Controls.Add(ZipCodeTextBox);
             MailingAddressGroupBox.Controls.Add(ZipCodeLabel);
             MailingAddressGroupBox.Controls.Add(StateTextBox);
             MailingAddressGroupBox.Controls.Add(StateLabel);
@@ -198,13 +185,12 @@ namespace AddressLabel
             MailingAddressGroupBox.Controls.Add(LastNameTextBox);
             MailingAddressGroupBox.Controls.Add(FirstNameTextBox);
             MailingAddressGroupBox.Controls.Add(FirstNameLabel);
-            MailingAddressGroupBox.Location = new Point(11, 6);
+            MailingAddressGroupBox.Location = new Point(13, 6);
             MailingAddressGroupBox.Name = "MailingAddressGroupBox";
             MailingAddressGroupBox.Size = new Size(318, 426);
             MailingAddressGroupBox.TabIndex = 12;
             MailingAddressGroupBox.TabStop = false;
             MailingAddressGroupBox.Text = "Mailing Address";
-           // ToolTip.SetToolTip(MailingAddressGroupBox, "Add User Info");
             // 
             // DisplayLabelButton
             // 
@@ -224,7 +210,7 @@ namespace AddressLabel
             ClearButton.TabIndex = 8;
             ClearButton.Text = "Clear";
             ClearButton.UseVisualStyleBackColor = true;
-            ClearButton.Click += ClearButton_Click_1;
+            ClearButton.Click += ClearButton_Click;
             // 
             // ExitButton
             // 
@@ -236,21 +222,31 @@ namespace AddressLabel
             ExitButton.UseVisualStyleBackColor = true;
             ExitButton.Click += ExitButton_Click;
             // 
-            // label1
+            // DisplayLabel
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(354, 30);
-            label1.Name = "label1";
-            label1.Size = new Size(59, 25);
-            label1.TabIndex = 13;
-            label1.Text = "label1";
+            DisplayLabel.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DisplayLabel.Location = new Point(351, 77);
+            DisplayLabel.Name = "DisplayLabel";
+            DisplayLabel.Size = new Size(237, 246);
+            DisplayLabel.TabIndex = 18;
+            // 
+            // AddressLabelGroupBox
+            // 
+            AddressLabelGroupBox.Controls.Add(DisplayLabel);
+            AddressLabelGroupBox.Location = new Point(336, 6);
+            AddressLabelGroupBox.Name = "AddressLabelGroupBox";
+            AddressLabelGroupBox.Size = new Size(452, 332);
+            AddressLabelGroupBox.TabIndex = 14;
+            AddressLabelGroupBox.TabStop = false;
+            AddressLabelGroupBox.Text = "Address Label";
+            AddressLabelGroupBox.Enter += AddressLabelGroupBox_Enter;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(label1);
+            Controls.Add(AddressLabelGroupBox);
             Controls.Add(ExitButton);
             Controls.Add(ClearButton);
             Controls.Add(DisplayLabelButton);
@@ -259,8 +255,8 @@ namespace AddressLabel
             Text = "\"";
             MailingAddressGroupBox.ResumeLayout(false);
             MailingAddressGroupBox.PerformLayout();
+            AddressLabelGroupBox.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -276,11 +272,12 @@ namespace AddressLabel
         private Label StateLabel;
         private TextBox StateTextBox;
         private Label ZipCodeLabel;
-        private TextBox textBox1;
+        private TextBox ZipCodeTextBox;
         private GroupBox MailingAddressGroupBox;
         private Button DisplayLabelButton;
         private Button ClearButton;
         private Button ExitButton;
-        private Label label1;
+        private Label DisplayLabel;
+        private GroupBox AddressLabelGroupBox;
     }
 }
