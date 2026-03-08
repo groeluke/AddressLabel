@@ -42,10 +42,5 @@ namespace AddressLabel
         {
             this.Close();
         }
-
-        private void AddressLabelGroupBox_Enter(object sender, EventArgs e)
-        {
-
-        }
     }
 }
