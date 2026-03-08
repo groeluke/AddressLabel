@@ -225,9 +225,9 @@ namespace AddressLabel
             // DisplayLabel
             // 
             DisplayLabel.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DisplayLabel.Location = new Point(351, 77);
+            DisplayLabel.Location = new Point(0, 27);
             DisplayLabel.Name = "DisplayLabel";
-            DisplayLabel.Size = new Size(237, 246);
+            DisplayLabel.Size = new Size(452, 296);
             DisplayLabel.TabIndex = 18;
             // 
             // AddressLabelGroupBox

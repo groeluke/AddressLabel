@@ -20,9 +20,9 @@ namespace AddressLabel
         private void DisplayLabelButton_Click(object sender, EventArgs e)
         {
             ValidateFields();
-            DisplayLabel.Text = $" {FirstNameTextBox.Text} {LastNameTextBox.Text}\n" +
-                $" {StreetAddressTextBox.Text}\n " +
-                $"{CityTextBox.Text} , {StateTextBox.Text} {ZipCodeTextBox.Text}";
+            DisplayLabel.Text = $"{FirstNameTextBox.Text} {LastNameTextBox.Text}\n" +
+                $"{StreetAddressTextBox.Text}\n" +
+                $"{CityTextBox.Text}, {StateTextBox.Text} {ZipCodeTextBox.Text}";
         }
 
         private void ClearButton_Click(object sender, EventArgs e)
