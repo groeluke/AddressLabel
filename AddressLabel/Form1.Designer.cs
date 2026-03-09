@@ -239,7 +239,6 @@ namespace AddressLabel
             AddressLabelGroupBox.TabIndex = 14;
             AddressLabelGroupBox.TabStop = false;
             AddressLabelGroupBox.Text = "Address Label";
-            AddressLabelGroupBox.Enter += AddressLabelGroupBox_Enter;
             // 
             // Form1
             // 
