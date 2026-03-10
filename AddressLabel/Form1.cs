@@ -33,7 +33,8 @@ namespace AddressLabel
             //make sure all the fields are filled out
             DisplayLabel.Text = $"{FirstNameTextBox.Text} {LastNameTextBox.Text}\n" +
                 $"{StreetAddressTextBox.Text}\n" +
-                $"{CityTextBox.Text}, {StateTextBox.Text} {ZipCodeTextBox.Text}";
+                $"{CityTextBox.Text}, {StateTextBox.Text} {ZipCodeTextBox.Text}"; 
+            // display the address label in the display label
         }
 
         private void ClearButton_Click(object sender, EventArgs e)
