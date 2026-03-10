@@ -8,7 +8,7 @@ https://github.com/groeluke/AddressLabel.git
 
 namespace AddressLabel
 {
-    partial class Form1
+    partial class AddressLabelForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -271,6 +271,7 @@ namespace AddressLabel
             Controls.Add(MailingAddressGroupBox);
             Name = "Form1";
             Text = "\"";
+            Load += Form1_Load;
             MailingAddressGroupBox.ResumeLayout(false);
             MailingAddressGroupBox.PerformLayout();
             AddressLabelGroupBox.ResumeLayout(false);

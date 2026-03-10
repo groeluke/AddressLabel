@@ -8,16 +8,16 @@ https://github.com/groeluke/AddressLabel.git
 
 namespace AddressLabel
 {
-    public partial class Form1 : Form
+    public partial class AddressLabelForm : Form
     {
-        public Form1()
+        public AddressLabelForm()
         {
-            InitializeComponent(); 
+            InitializeComponent();
             // intialize the form components
-            SetDefaults(); 
+            SetDefaults();
             // set all the text boxes and display label to empty
         }
-        void SetDefaults() 
+        void SetDefaults()
         {
             FirstNameTextBox.Text = "";
             LastNameTextBox.Text = "";
@@ -30,23 +30,23 @@ namespace AddressLabel
 
         private void DisplayLabelButton_Click(object sender, EventArgs e)
         {
-            ValidateFields(); 
+            ValidateFields();
             //make sure all the fields are filled out
             DisplayLabel.Text = $"{FirstNameTextBox.Text} {LastNameTextBox.Text}\n" +
                 $"{StreetAddressTextBox.Text}\n" +
-                $"{CityTextBox.Text}, {StateTextBox.Text} {ZipCodeTextBox.Text}"; 
+                $"{CityTextBox.Text}, {StateTextBox.Text} {ZipCodeTextBox.Text}";
             // display the address label in the display label
         }
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
-            SetDefaults(); 
+            SetDefaults();
             // Clear all text boxes and reset to defaults
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            this.Close(); 
+            this.Close();
             // Close the form/program
         }
 
@@ -138,6 +138,11 @@ namespace AddressLabel
                 DisplayLabelButton.Enabled = false;
             }
             // change the color of the text box to light yellow if there is text, pink if there is not
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
