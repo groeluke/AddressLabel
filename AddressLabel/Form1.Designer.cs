@@ -47,6 +47,7 @@ namespace AddressLabel
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             FirstNameLabel = new Label();
             FirstNameTextBox = new TextBox();
             LastNameTextBox = new TextBox();
@@ -65,6 +66,7 @@ namespace AddressLabel
             ExitButton = new Button();
             DisplayLabel = new Label();
             AddressLabelGroupBox = new GroupBox();
+            MainToolTip = new ToolTip(components);
             MailingAddressGroupBox.SuspendLayout();
             AddressLabelGroupBox.SuspendLayout();
             SuspendLayout();
@@ -85,6 +87,8 @@ namespace AddressLabel
             FirstNameTextBox.Size = new Size(263, 31);
             FirstNameTextBox.TabIndex = 1;
             FirstNameTextBox.Tag = "FirstNameTextBox";
+            MainToolTip.SetToolTip(FirstNameTextBox, "Enter Your First Name");
+            FirstNameTextBox.TextChanged += FirstNameTextBox_TextChanged;
             // 
             // LastNameTextBox
             // 
@@ -93,6 +97,8 @@ namespace AddressLabel
             LastNameTextBox.Size = new Size(263, 31);
             LastNameTextBox.TabIndex = 2;
             LastNameTextBox.Tag = "LastNameTextBox";
+            MainToolTip.SetToolTip(LastNameTextBox, "Enter Your Last Name");
+            LastNameTextBox.TextChanged += LastNameTextBox_TextChanged;
             // 
             // LastNameLabel
             // 
@@ -110,6 +116,8 @@ namespace AddressLabel
             StreetAddressTextBox.Size = new Size(263, 31);
             StreetAddressTextBox.TabIndex = 3;
             StreetAddressTextBox.Tag = "StreetAddressTextBox";
+            MainToolTip.SetToolTip(StreetAddressTextBox, "Enter Your Street Address");
+            StreetAddressTextBox.TextChanged += StreetAddressTextBox_TextChanged;
             // 
             // StreetAddressLabel
             // 
@@ -127,6 +135,8 @@ namespace AddressLabel
             CityTextBox.Size = new Size(263, 31);
             CityTextBox.TabIndex = 4;
             CityTextBox.Tag = "CityTextBox";
+            MainToolTip.SetToolTip(CityTextBox, "Enter The City You Live In");
+            CityTextBox.TextChanged += CityTextBox_TextChanged;
             // 
             // CityLabel
             // 
@@ -153,6 +163,8 @@ namespace AddressLabel
             StateTextBox.Size = new Size(150, 31);
             StateTextBox.TabIndex = 5;
             StateTextBox.Tag = "StateTextBox";
+            MainToolTip.SetToolTip(StateTextBox, "Enter The State You Live In");
+            StateTextBox.TextChanged += StateTextBox_TextChanged;
             // 
             // ZipCodeLabel
             // 
@@ -170,6 +182,8 @@ namespace AddressLabel
             ZipCodeTextBox.Size = new Size(150, 31);
             ZipCodeTextBox.TabIndex = 6;
             ZipCodeTextBox.Tag = "ZipCodeTextBox";
+            MainToolTip.SetToolTip(ZipCodeTextBox, "Enter Your Zip Code");
+            ZipCodeTextBox.TextChanged += ZipCodeTextBox_TextChanged;
             // 
             // MailingAddressGroupBox
             // 
@@ -191,6 +205,7 @@ namespace AddressLabel
             MailingAddressGroupBox.TabIndex = 12;
             MailingAddressGroupBox.TabStop = false;
             MailingAddressGroupBox.Text = "Mailing Address";
+            MainToolTip.SetToolTip(MailingAddressGroupBox, "Add Mailing Address information");
             // 
             // DisplayLabelButton
             // 
@@ -199,6 +214,7 @@ namespace AddressLabel
             DisplayLabelButton.Size = new Size(149, 80);
             DisplayLabelButton.TabIndex = 7;
             DisplayLabelButton.Text = "Display Label";
+            MainToolTip.SetToolTip(DisplayLabelButton, "Press To See TheDisplay Label");
             DisplayLabelButton.UseVisualStyleBackColor = true;
             DisplayLabelButton.Click += DisplayLabelButton_Click;
             // 
@@ -209,6 +225,7 @@ namespace AddressLabel
             ClearButton.Size = new Size(149, 80);
             ClearButton.TabIndex = 8;
             ClearButton.Text = "Clear";
+            MainToolTip.SetToolTip(ClearButton, "Clear User Information");
             ClearButton.UseVisualStyleBackColor = true;
             ClearButton.Click += ClearButton_Click;
             // 
@@ -219,6 +236,7 @@ namespace AddressLabel
             ExitButton.Size = new Size(149, 80);
             ExitButton.TabIndex = 9;
             ExitButton.Text = "Exit";
+            MainToolTip.SetToolTip(ExitButton, "Exit The Program");
             ExitButton.UseVisualStyleBackColor = true;
             ExitButton.Click += ExitButton_Click;
             // 
@@ -278,5 +296,6 @@ namespace AddressLabel
         private Button ExitButton;
         private Label DisplayLabel;
         private GroupBox AddressLabelGroupBox;
+        private ToolTip MainToolTip;
     }
 }
