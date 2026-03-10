@@ -25,6 +25,7 @@ namespace AddressLabel
             CityTextBox.Text = "";
             StateTextBox.Text = "";
             ZipCodeTextBox.Text = "";
+            DisplayLabel.Text = "";
         }
 
         private void DisplayLabelButton_Click(object sender, EventArgs e)
