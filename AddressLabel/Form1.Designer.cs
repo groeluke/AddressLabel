@@ -25,7 +25,8 @@ namespace AddressLabel
             {
                 components.Dispose();
             }
-            base.Dispose(disposing);
+            base.Dispose(disposing); 
+            // call the base class's Dispose method to ensure proper cleanup of resources
         }
         private void ValidateFields()
         {

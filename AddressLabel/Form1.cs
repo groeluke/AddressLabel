@@ -12,10 +12,12 @@ namespace AddressLabel
     {
         public Form1()
         {
-            InitializeComponent();
-            SetDefaults();
+            InitializeComponent(); 
+            // intialize the form components
+            SetDefaults(); 
+            // set all the text boxes and display label to empty
         }
-        void SetDefaults()
+        void SetDefaults() 
         {
             FirstNameTextBox.Text = "";
             LastNameTextBox.Text = "";
@@ -27,7 +29,8 @@ namespace AddressLabel
 
         private void DisplayLabelButton_Click(object sender, EventArgs e)
         {
-            ValidateFields();
+            ValidateFields(); 
+            //make sure all the fields are filled out
             DisplayLabel.Text = $"{FirstNameTextBox.Text} {LastNameTextBox.Text}\n" +
                 $"{StreetAddressTextBox.Text}\n" +
                 $"{CityTextBox.Text}, {StateTextBox.Text} {ZipCodeTextBox.Text}";
@@ -35,17 +38,14 @@ namespace AddressLabel
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
-            SetDefaults();
+            SetDefaults(); 
+            // Clear all text boxes and reset to defaults
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void toolTip1_Popup(object sender, PopupEventArgs e)
-        {
-
+            this.Close(); 
+            // Close the form/program
         }
 
         private void FirstNameTextBox_TextChanged(object sender, EventArgs e)
@@ -60,6 +60,7 @@ namespace AddressLabel
                 FirstNameTextBox.BackColor = Color.Pink;
                 DisplayLabelButton.Enabled = false;
             }
+            // change the color of the text box to light yellow if there is text, pink if there is not
         }
 
         private void LastNameTextBox_TextChanged(object sender, EventArgs e)
@@ -74,6 +75,7 @@ namespace AddressLabel
                 LastNameTextBox.BackColor = Color.Pink;
                 DisplayLabelButton.Enabled = false;
             }
+            // change the color of the text box to light yellow if there is text, pink if there is not
         }
 
         private void StreetAddressTextBox_TextChanged(object sender, EventArgs e)
@@ -88,6 +90,7 @@ namespace AddressLabel
                 StreetAddressTextBox.BackColor = Color.Pink;
                 DisplayLabelButton.Enabled = false;
             }
+            // change the color of the text box to light yellow if there is text, pink if there is not
         }
 
         private void CityTextBox_TextChanged(object sender, EventArgs e)
@@ -102,6 +105,7 @@ namespace AddressLabel
                 CityTextBox.BackColor = Color.Pink;
                 DisplayLabelButton.Enabled = false;
             }
+            // change the color of the text box to light yellow if there is text, pink if there is not
         }
 
         private void StateTextBox_TextChanged(object sender, EventArgs e)
@@ -116,6 +120,7 @@ namespace AddressLabel
                 StateTextBox.BackColor = Color.Pink;
                 DisplayLabelButton.Enabled = false;
             }
+            // change the color of the text box to light yellow if there is text, pink if there is not
         }
 
         private void ZipCodeTextBox_TextChanged(object sender, EventArgs e)
@@ -130,6 +135,7 @@ namespace AddressLabel
                 ZipCodeTextBox.BackColor = Color.Pink;
                 DisplayLabelButton.Enabled = false;
             }
+            // change the color of the text box to light yellow if there is text, pink if there is not
         }
     }
 }
